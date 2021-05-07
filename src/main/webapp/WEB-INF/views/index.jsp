@@ -24,7 +24,7 @@
 			</c:if>
 			<c:if test="${userinfo ne null}">
 				<li><button class="board-btn" onclick="">자유게시판</button></li>
-				<li><button class="bulletin-btn" onclick="javascript:write();">글쓰기</button></li>
+				<li><button class="bulletin-btn" onclick="javascript:regist();">글쓰기</button></li>
 				<li><button class="mypage-btn" onclick="javascript:mypage();">마이페이지</button></li>
 				<li><button class="logout-btn" onclick="javascript:logout();">로그아웃</button></li>
 			</c:if>
@@ -127,7 +127,7 @@
 	  const selectedSi = e.target.options[e.target.selectedIndex];
 	  selectedSi.setAttribute("name", "code");
 	  const dongcode = selectedSi.dataset.code;
-	  location.href="${root}/main?act=search&dongcode="+dongcode;
+	  location.href="${root}/house/search?dongcode="+dongcode;
 	});
 	
 	function login(){
@@ -141,6 +141,9 @@
 	}
 	function mypage(){
 		document.location.href="${root}/user/mypage";
+	}
+	function regist(){
+		document.location.href="${root}/house/regist";
 	}
 	</script>
 </body>
