@@ -78,8 +78,7 @@
 	<div class="modal signin">
 		<div class="modal__content animate">
 			<div class="modal__content__title">로그인</div>
-			<form method="post" action="${root}/main" class="signin-form">
-				<input type="hidden" name="act" value="login">
+			<form method="post" action="${root}/login" class="signin-form">
 				<input class="form__row id" type="text" placeholder="아이디"
 					name="userid" required /> <input
 					class="form__row pwd" type="password" placeholder="비밀번호"
