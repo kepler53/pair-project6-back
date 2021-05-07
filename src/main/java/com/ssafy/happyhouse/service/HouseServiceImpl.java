@@ -18,4 +18,20 @@ public class HouseServiceImpl implements HouseService {
 	public List<HouseDealDto> search(String dongcode) throws Exception {
 		return template.getMapper(HouseMapper.class).search(dongcode);
 	}
+
+	@Override
+	public int add(HouseDealDto housedeal) {
+		int result = template.getMapper(HouseMapper.class).add(housedeal);
+		System.out.println(housedeal.getFileinfo());
+		housedeal.getFileinfo().setNo(housedeal.getNo());
+		int result2 = template.getMapper(HouseMapper.class).fileRegist(housedeal.getFileinfo());
+		
+		if(result==1&& result2==1) {
+			return 1;
+		}else {
+			return 0;
+		}
+	}
+
+
 }

@@ -1,41 +1,47 @@
 package com.ssafy.happyhouse.dto;
 
+
 public class FileInfoDto {
 	
-	int fno;
-	String savefolder;
-	String originfile;
-	String savefile;
+	@Override
+	public String toString() {
+		return "FileInfoDto [no=" + no + ", fno=" + fno + ", saveFolder=" + saveFolder + ", originFile=" + originFile
+				+ ", saveFile=" + saveFile + "]";
+	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
 	public int getFno() {
 		return fno;
 	}
 	public void setFno(int fno) {
 		this.fno = fno;
 	}
-	public String getSavefolder() {
-		return savefolder;
+	public String getSaveFolder() {
+		return saveFolder;
 	}
-	public void setSavefolder(String savefolder) {
-		this.savefolder = savefolder;
+	public void setSaveFolder(String saveFolder) {
+		this.saveFolder = saveFolder;
 	}
-	public String getOriginfile() {
-		return originfile;
+	public String getOriginFile() {
+		return originFile;
 	}
-	public void setOriginfile(String originfile) {
-		this.originfile = originfile;
+	public void setOriginFile(String originFile) {
+		this.originFile = originFile;
 	}
-	public String getSavefile() {
-		return savefile;
+	public String getSaveFile() {
+		return saveFile;
 	}
-	public void setSavefile(String savefile) {
-		this.savefile = savefile;
+	public void setSaveFile(String saveFile) {
+		this.saveFile = saveFile;
 	}
-	@Override
-	public String toString() {
-		return "FileInfoDto [fno=" + fno + ", savefolder=" + savefolder + ", originfile=" + originfile + ", savefile="
-				+ savefile + "]";
-	}
-	
-	
+	private int no;
+	private int fno;
+	private String saveFolder;
+	private String originFile;
+	private String saveFile;
 
 }

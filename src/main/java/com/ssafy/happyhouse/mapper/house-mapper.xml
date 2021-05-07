@@ -6,4 +6,18 @@
 		where code = #{dongcode}
 		limit 1, 8
 	</select>
+	
+	<insert id="add" parameterType="HouseDealDto" >
+		insert into housedeal(AptName,dong,code,dealAmount,buildYear,area,floor)
+		values(#{aptName},#{dong},#{code},#{dealAmount},#{buildYear},#{area},#{floor})
+		<selectKey resultType="int" keyProperty="no" order="AFTER">
+        	SELECT LAST_INSERT_ID()
+    	</selectKey>
+	</insert>
+	
+	<insert id="fileRegist" parameterType="FileInfoDto">
+		insert into file_info (no, savefolder, originfile, savefile)
+		values (#{no},#{saveFolder},#{originFile},#{saveFile})
+	</insert>
+	
 </mapper>

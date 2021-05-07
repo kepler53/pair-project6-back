@@ -88,7 +88,8 @@ input.form__row {
 			<div class="modal__content__title">필수 정보를 입력해주세요.</div>
 			<form class="signup-form" action="submit" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="act" value="join">
-				<input class="form__row id" type="text" placeholder="집 이름" name="AptName" required/>
+				<input class="form__row id" type="text" placeholder="집 이름" name="aptName" required/>
+				<input class="form__row id" type="text" placeholder="동" name="dong" required/>
 				<input class="form__row id" type="text" placeholder="법정동 코드" name="code" required/>
 				<input class="form__row id" type="text" placeholder="가격" name="dealAmount" required/>
 				<input class="form__row id" type="text" placeholder="준공 년도" name="buildYear" required/>
