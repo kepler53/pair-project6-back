@@ -86,14 +86,14 @@ input.form__row {
 	<div class="modal signup">
 		<div class="modal__content animate">
 			<div class="modal__content__title">필수 정보를 입력해주세요.</div>
-			<form class="signup-form" action="submit">
+			<form class="signup-form" action="submit" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="act" value="join">
-				<input class="form__row id" type="text" placeholder="집 이름" name="AptName"/>
-				<input class="form__row id" type="text" placeholder="법정동 코드" name="code"/>
-				<input class="form__row id" type="text" placeholder="가격" name="dealAmount"/>
-				<input class="form__row id" type="text" placeholder="준공 년도" name="buildYear"/>
-				<input class="form__row id" type="text" placeholder="면적(평)" name="area"/>
-				<input class="form__row id" type="text" placeholder="층수" name="floor"/>
+				<input class="form__row id" type="text" placeholder="집 이름" name="AptName" required/>
+				<input class="form__row id" type="text" placeholder="법정동 코드" name="code" required/>
+				<input class="form__row id" type="text" placeholder="가격" name="dealAmount" required/>
+				<input class="form__row id" type="text" placeholder="준공 년도" name="buildYear" required/>
+				<input class="form__row id" type="text" placeholder="면적(평)" name="area" required/>
+				<input class="form__row id" type="text" placeholder="층수" name="floor" required/>
 				<input class="form__row id" type="file" name="img"/>
 				<button class="signup-form__btn" type="submit" onclick="javascript:join();">등록</button>
 			</form>
@@ -101,7 +101,7 @@ input.form__row {
 	</div>
 	<script>
       function join() {
-      	document.querySelector(".signup-form").action = "${root}/main";
+      	document.querySelector(".signup-form").action = "${root}/house/regist";
       	document.querySelector(".signup-form").submit(); 	
       }
     </script>
