@@ -15,7 +15,7 @@
 <body>
 	<header>
 		<div class="header__main">
-			<i class="fas fa-home"></i> <a href="index.jsp">Happy House</a>
+			<i class="fas fa-home"></i> <a href="${root}">Happy House</a>
 		</div>
 		<ul class="header__menu">
 			<c:if test="${userinfo eq null}">
@@ -102,7 +102,7 @@
 	selectCity.addEventListener("change", (e) => {
 	  const selectedCity = e.target.options[e.target.selectedIndex].value;
 
-	  const response = fetchJSON("res/address.json");
+	  const response = fetchJSON("${root}/resources/data/address.json");
 	  response.then((data) => {
 	    for (let i = 0; i < data.length; i++) {
 	      if (Object.keys(data[i])[0] === selectedCity) {
