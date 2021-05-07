@@ -37,7 +37,7 @@
     │   ├── WEB-INF/views
     │   │   ├──  house
     │   │   │    ├── house.jsp
-    │   │   │    └──  houseRegist.jsp
+    │   │   │    └── houseRegist.jsp
     │   │   ├──  user
     │   │   │    ├── join.jsp
     │   │   │    ├── login.jsp
