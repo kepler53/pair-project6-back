@@ -87,17 +87,16 @@ input.form__row {
 	<div class="modal signup">
 		<div class="modal__content animate">
 			<div class="modal__content__title">필수 정보를 입력해주세요.</div>
-			<form class="update-form" action="submit">
-				<input type="hidden" name="act" value="update"> <input
-					class="form__row id" type="text"
-					placeholder="현재 아이디 : ${userinfo.userid}" name="userid" disabled />
+			<form class="update-form" action="submit" method="post">
+				 <input	class="form__row id" type="text"
+					placeholder="현재 아이디 : ${userinfo.userid}" name="userid" readonly />
 				<input class="form__row pwd" type="password" name="userpwd"
 					placeholder="비밀번호* (영문+숫자, 8~20자)" required /> <input
 					class="form__row pwd" type="password" placeholder="비밀번호 재확인*"
 					required />
 				<div class="signup-form__email">
 					<input class="form__row email front" type="text"
-						placeholder="${userinfo.userid}" name="useremail-front" required />
+						placeholder="${userinfo.userid}" name="useremail" required />
 					<span class="email-center">@</span> <input
 						class="form__row email end" type="text" name="useremail-end"
 						placeholder="이메일 뒷자리*" disabled />
@@ -134,11 +133,11 @@ input.form__row {
       
     });
   	function update() {
-  	document.querySelector(".update-form").action = "${root}/main";
+  	document.querySelector(".update-form").action = "${root}/user/update";
   	document.querySelector(".update-form").submit(); 	
  	 }
   	function deleteUser() {
-	  document.location.href="${root}/main?act=delete"
+	  document.location.href="${root}/user/delete"
 	  }
 	</script>
 </body>

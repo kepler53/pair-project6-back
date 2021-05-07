@@ -15,6 +15,7 @@
 	<update id="updateMember">
 		update member_tb
 		set userpwd = #{userpwd},useremail =#{useremail}
+		where userid = #{userid}
 	</update>
 	
 	<select id="login" resultType="MemberDto">

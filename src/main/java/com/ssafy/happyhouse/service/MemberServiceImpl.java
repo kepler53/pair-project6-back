@@ -21,6 +21,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int updateMember(MemberDto member) {
+		System.out.println("여기"+member);
 		return template.getMapper(MemberMapper.class).updateMember(member);
 	}
 

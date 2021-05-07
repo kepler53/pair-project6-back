@@ -66,6 +66,36 @@ public class UserController {
 		return "user/mypage";
 	}
 	
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete(HttpSession session) {
+		MemberDto member = (MemberDto) session.getAttribute("userinfo");
+		int result = mservice.deleteMember(member);
+		if (result > 0) {
+			session.invalidate();
+			return "index";
+		}else {
+			return "user/mypage";
+		}
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String update(MemberDto memberDto, @RequestParam(value = "email") String emailEnd
+			,HttpSession session) {
+		
+		MemberDto sessionInfo = (MemberDto) session.getAttribute("userinfo");
+		memberDto.setUserid(sessionInfo.getUserid());
+		memberDto.setUseremail(memberDto.getUseremail()+"@"+emailEnd);
+		int result = mservice.updateMember(memberDto);
+		
+		if(result >0) {
+			session.setAttribute("userinfo", memberDto);
+			return "index";
+		}else {
+			return "user/mypage";
+		}
+		
+	}
+	
 	
 	
 }
