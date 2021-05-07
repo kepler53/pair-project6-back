@@ -1,5 +1,8 @@
 package com.ssafy.happyhouse.dto;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class MemberDto {
 	
 	String userid;
