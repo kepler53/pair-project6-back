@@ -40,7 +40,6 @@
 	margin: 10px;
 }
 </style>
-
 <c:if test="${empty houseList}">
 	<span class="msg">there is no item</span>
 </c:if>

@@ -127,7 +127,7 @@
 	  const selectedSi = e.target.options[e.target.selectedIndex];
 	  selectedSi.setAttribute("name", "code");
 	  const dongcode = selectedSi.dataset.code;
-	  location.href="${root}/house/search?dongcode="+dongcode;
+	  location.href="${root}/house/search/"+dongcode;
 	});
 	
 	function login(){
