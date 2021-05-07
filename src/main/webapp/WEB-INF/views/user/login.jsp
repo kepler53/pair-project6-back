@@ -85,7 +85,7 @@
 					name="userpwd" required />
 				<button class="signin-form__btn" type="submit">로그인</button>
 			</form>
-			<span class="psw">계정이 없으신가요? <a href="join.jsp" class="join">회원가입</a></span>
+			<span class="psw">계정이 없으신가요? <a href="join" class="join">회원가입</a></span>
 		</div>
 	</div>
 	<script>

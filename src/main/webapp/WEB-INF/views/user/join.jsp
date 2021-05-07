@@ -86,8 +86,7 @@ input.form__row {
 	<div class="modal signup">
 		<div class="modal__content animate">
 			<div class="modal__content__title">필수 정보를 입력해주세요.</div>
-			<form class="signup-form" action="submit">
-				<input type="hidden" name="act" value="join">
+			<form class="signup-form" action="submit" method="post">
 				<input class="form__row id" type="text" placeholder="아이디*(4~20자)" name="userid"/>
 				<input class="form__row pwd" type="password" name="userpwd"
 					placeholder="비밀번호* (영문+숫자, 8~20자)" required /> <input
@@ -95,7 +94,7 @@ input.form__row {
 					required />
 				<div class="signup-form__email">
 					<input class="form__row email front" type="text"
-						placeholder="이메일 앞자리*" name="useremail-front" required /> <span class="email-center">@</span>
+						placeholder="이메일 앞자리*" name="useremail" required /> <span class="email-center">@</span>
 					<input class="form__row email end" type="text" name="useremail-end"
 						placeholder="이메일 뒷자리*" disabled />
 				</div>
@@ -128,7 +127,7 @@ input.form__row {
           
         });
       function join() {
-      	document.querySelector(".signup-form").action = "${root}/main";
+      	document.querySelector(".signup-form").action = "${root}/user/join";
       	document.querySelector(".signup-form").submit(); 	
       }
     </script>
