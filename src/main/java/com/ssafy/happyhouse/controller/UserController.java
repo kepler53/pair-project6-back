@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ssafy.happyhouse.dto.MemberDto;
 import com.ssafy.happyhouse.service.MemberService;
@@ -46,6 +47,18 @@ public class UserController {
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join() {
 		return "user/join";
+	}
+	
+	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	public String join(MemberDto member,@RequestParam(value = "email") String emailEnd) {
+		member.setUseremail(member.getUseremail()+"@"+emailEnd);
+		int result = mservice.addMember(member);
+		
+		if(result>0) {
+			return "index";
+		}else {
+			return "user/join";
+		}
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
