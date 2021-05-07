@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${root}/resources/css/style.css">
+<link rel="stylesheet" href="${root}/resources/css/modal.css">
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;500;600&display=swap"
 	rel="stylesheet" />
