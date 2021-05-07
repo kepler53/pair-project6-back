@@ -146,5 +146,12 @@
 		document.location.href="${root}/house/regist";
 	}
 	</script>
+	<script>
+	let msg = "${msg}";
+	console.log(msg);
+	if(msg){
+		alert(msg);
+	}
+	</script>
 </body>
 </html>

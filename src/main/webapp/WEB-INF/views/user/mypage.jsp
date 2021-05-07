@@ -95,8 +95,7 @@ input.form__row {
 					class="form__row pwd" type="password" placeholder="비밀번호 재확인*"
 					required />
 				<div class="signup-form__email">
-					<input class="form__row email front" type="text"
-						placeholder="${userinfo.userid}" name="useremail" required />
+					<input class="form__row email front" type="text" placeholder="${userinfo.userid}" name="useremail" required />
 					<span class="email-center">@</span> <input
 						class="form__row email end" type="text" name="useremail-end"
 						placeholder="이메일 뒷자리*" disabled />
