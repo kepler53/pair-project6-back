@@ -45,3 +45,6 @@
     │   │   └── index.jsp
     ├── pom.xml
     └── README.md
+    
+## ERD
+https://lab.ssafy.com/95jjangjun/happyhouse-spring/raw/6bb26c6e6f09770a212e4138249ffbcb8f5a6ade/src/main/webapp/resources/res/happpyhouse.png
