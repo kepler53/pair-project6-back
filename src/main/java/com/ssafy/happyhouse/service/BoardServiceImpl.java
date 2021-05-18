@@ -39,4 +39,12 @@ public class BoardServiceImpl implements BoardService {
 		return template.getMapper(BoardMapper.class).updateBoard(boardDto);
 	}
 
+	@Override
+	public BoardDto selectBoard(String boardnum) {
+		
+		BoardDto board = template.getMapper(BoardMapper.class).selectBoard(boardnum);
+		board.setBoard_count(board.getBoard_count()+1);
+		return board;
+	}
+
 }

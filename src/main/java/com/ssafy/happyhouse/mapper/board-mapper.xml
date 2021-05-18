@@ -3,8 +3,8 @@
 <mapper namespace="com.ssafy.happyhouse.mapper.BoardMapper">
 	
 	<insert id="addBoard">
-		insert into board_tb(board_title,board_content)
-		values (#{board_title},#{board_content})
+		insert into board_tb(board_title,board_content,board_regtime)
+		values (#{board_title},#{board_content},now())
 	</insert>
 	
 	<select id="getBoardList" resultType="BoardDto">
@@ -20,6 +20,10 @@
 	<delete id="deleteBoard">
 		delete from board_tb where board_no = #{board_no}
 	</delete>
+	
+	<select id="selectBoard" resultType="BoardDto">
+		select * from board_tb where board_no = #{board_no}
+	</select>
 	
 	
 
