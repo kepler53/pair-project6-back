@@ -44,7 +44,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("")
-	public String addBoard(@CookieValue("loginCookie")String loginId,@RequestBody BoardDto boardDto) {
+	public String addBoard(@RequestBody BoardDto boardDto) {
 		int result = bservice.addBoard(boardDto);
 		
 		if(result > 0) {
