@@ -13,4 +13,5 @@ public interface BoardMapper {
 	public int deleteBoard(String boardnum);
 	public int updateBoard(BoardDto boardDto);
 	public BoardDto selectBoard(String boardnum);
+	public int updateCount(String boardnum);
 }

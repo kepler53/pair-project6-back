@@ -41,9 +41,9 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardDto selectBoard(String boardnum) {
-		
+		int result = template.getMapper(BoardMapper.class).updateCount(boardnum);
+//		System.out.println(result);
 		BoardDto board = template.getMapper(BoardMapper.class).selectBoard(boardnum);
-		board.setBoard_count(board.getBoard_count()+1);
 		return board;
 	}
 
