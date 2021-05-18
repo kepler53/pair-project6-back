@@ -57,6 +57,4 @@ public class BoardDto {
 	private String board_content;
 	private int board_count;
 	private String board_check;
-	
-
 }
