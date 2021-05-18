@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.happyhouse.dto.BoardDto;
+import com.ssafy.happyhouse.dto.CommentDto;
 import com.ssafy.happyhouse.mapper.BoardMapper;
+import com.ssafy.happyhouse.mapper.CommentMapper;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -46,5 +48,31 @@ public class BoardServiceImpl implements BoardService {
 		BoardDto board = template.getMapper(BoardMapper.class).selectBoard(boardnum);
 		return board;
 	}
+
+	@Override
+	public List<CommentDto> getCmtList(String bnum) {
+		List<CommentDto> cList = template.getMapper(CommentMapper.class).getCmtList(bnum);
+		return cList;
+	}
+
+	@Override
+	public int addCmt(CommentDto comment) {
+		int result = template.getMapper(CommentMapper.class).addCmt(comment);
+		return result;
+	}
+
+	@Override
+	public int deleteCmt(String cnum) {
+		int result = template.getMapper(CommentMapper.class).deleteCmt(cnum);
+		return result;
+	}
+
+	@Override
+	public int updateCmt(CommentDto comment) {
+		int result = template.getMapper(CommentMapper.class).updateCmt(comment);
+		return result;
+	}
+	
+	
 
 }

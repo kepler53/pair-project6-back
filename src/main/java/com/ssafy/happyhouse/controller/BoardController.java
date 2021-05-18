@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,7 +44,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("")
-	public String addBoard(@RequestBody BoardDto boardDto) {
+	public String addBoard(@CookieValue("loginCookie")String loginId,@RequestBody BoardDto boardDto) {
 		int result = bservice.addBoard(boardDto);
 		
 		if(result > 0) {
