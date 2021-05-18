@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.mapper.CommentMapper">
+
+	<select id="getCmtList" resultType="CommentDto">
+		select * from comment_tb;	
+	</select>
+	
+	<insert id="addCmt">
+		insert into comment_tb(board_no,comment_regdate,comment_content)
+		values (#{board_no},now(),#{comment_content})
+	</insert>
+	
+	<delete id="deleteCmt">
+		delete from comment_tb
+		where comment_no = #{comment_no}
+	</delete>
+<!-- 	원래는 user가 일치해야지 삭제 수정을 할 수 있는 데 지금 로그인 기능이 안붙어있어서 그냥 삭제, 수정 -->
+	<update id="updateCmt">
+		update comment_tb
+		set comment_content = #{comment_content}
+		where comment_no = #{comment_no}
+	</update>
+	
+
+</mapper>
